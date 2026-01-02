@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pulse AI | Create Account</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">PULSE<span>AI</span></div>
+            <div class="nav-links">
+                <a href="index.html">Already have an account? Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main_container">
+        <div class="visual-side">
+            <div class="status-card">
+                <div class="orb-small" id="statusOrb" style="background: #7C3AED; box-shadow: 0 0 10px #7C3AED;"></div>
+                <div class="status-text">
+                    <span class="label">System Status</span>
+                    <span class="value">Awaiting New Profile</span>
+                </div>
+            </div>
+            <h1>Start your journey <br>to <span class="highlight">emotional clarity.</span></h1>
+        </div>
+
+        <div class="form-side">
+            <div class="login-box">
+                <h2>Create Account</h2>
+                <p class="subtitle">Join Pulse AI to start tracking your emotional trends.</p>
+
+                <form id="signupForm">
+                    <div class="input-field">
+                        <label>Full Name</label>
+                        <input type="text" id="signupName" placeholder="e.g. Alex Johnson" required>
+                    </div>
+                    <div class="input-field">
+                        <label>Email Address</label>
+                        <input type="email" id="signupEmail" placeholder="name@example.com" required>
+                    </div>
+                    <div class="input-field">
+                        <label>Password</label>
+                        <input type="password" id="signupPassword" placeholder="Minimum 8 characters" required>
+                    </div>
+                    <div class="input-field">
+                        <label>Date of Birth</label>
+                        <input type="date" id="signupDOB" required>
+                    </div>
+                    <button type="submit" class="btn-primary">Create Pulse Account</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- LINKING THE AUTH SCRIPT -->
+    <script src="js/auth.js"></script>
+</body>
+</html>

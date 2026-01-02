@@ -1,0 +1,187 @@
+/* --- 1. GLOBAL VARIABLES --- */
+:root {
+    --primary: #6D28D9;         /* Brand Purple */
+    --primary-light: #EDE9FE;   /* Light Purple for Visual Side */
+    --primary-alt: #6366f1;     /* Dashboard Indigo */
+    --pos-color: #10b981;       /* Teal */
+    --neg-color: #f43f5e;       /* Rose */
+    --text-dark: #1E293B;
+    --text-muted: #64748B;
+    --bg-light: #F8FAFC;
+    --white: #FFFFFF;
+    --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    min-height: 100vh;
+}
+
+/* --- 2. SHARED NAVBAR (Standard for all pages) --- */
+.navbar {
+    padding: 1rem 4rem;
+    background: var(--white);
+    border-bottom: 1px solid #E2E8F0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.5px; }
+.logo span { color: var(--primary); }
+
+.nav-links { display: flex; align-items: center; gap: 1.5rem; }
+.nav-links a { text-decoration: none; color: var(--primary); font-weight: 600; font-size: 0.9rem; }
+
+.user-pill {
+    background: #f1f5f9; padding: 0.5rem 1rem; border-radius: 50px;
+    display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; font-weight: 600;
+}
+
+.logout-btn { color: var(--neg-color); border: none; background: none; font-weight: 700; cursor: pointer; }
+
+/* --- 3. AUTH PAGES (Login/Signup - FORCED LEFT/RIGHT SPLIT) --- */
+/* FIXED: Using Underscore to match your HTML class="main_container" */
+.main_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* This forces the Left/Right split */
+    height: calc(100vh - 73px);
+    width: 100%;
+}
+
+.visual-side {
+    background: var(--primary-light);
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; /* Aligns content to left within the visual side */
+}
+
+.visual-side h1 {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    color: var(--text-dark);
+    margin-top: 1rem;
+}
+
+.highlight { color: var(--primary); }
+
+.status-card {
+    background: var(--white);
+    padding: 0.8rem 1.2rem;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.orb-small { width: 12px; height: 12px; border-radius: 50%; }
+
+.form-side {
+    background: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.login-box { width: 100%; max-width: 400px; }
+.subtitle { color: var(--text-muted); margin-bottom: 2rem; }
+
+/* Form Components */
+.social-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem; }
+.social-btn { 
+    padding: 0.75rem; border: 1px solid #E2E8F0; border-radius: 8px; 
+    background: white; display: flex; align-items: center; justify-content: center; 
+    gap: 0.5rem; font-weight: 600; cursor: pointer; 
+}
+.social-btn img { width: 18px; }
+
+.separator { text-align: center; border-bottom: 1px solid #E2E8F0; line-height: 0.1em; margin: 2rem 0; }
+.separator span { background: #fff; padding: 0 10px; color: var(--text-muted); font-size: 0.8rem; }
+
+.input-field { margin-bottom: 1.25rem; }
+.input-field label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.4rem; text-align: left; }
+.input-field input { width: 100%; padding: 0.75rem 1rem; border: 1px solid #E2E8F0; border-radius: 8px; font-size: 1rem; }
+
+.btn-primary { 
+    width: 100%; padding: 0.8rem; background: var(--primary); color: white; 
+    border: none; border-radius: 8px; font-weight: 600; cursor: pointer; transition: 0.3s;
+}
+.btn-primary:hover { background: #5B21B6; }
+
+/* --- 4. DASHBOARD PAGE (The High-End Grid) --- */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 380px 1fr; /* 380px Sidebar | Remainder Chat */
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1500px;
+    margin: 0 auto;
+    height: calc(100vh - 100px);
+}
+
+.pulse-card, .chat-card {
+    background: white;
+    border-radius: 24px;
+    box-shadow: var(--card-shadow);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid #f1f5f9;
+}
+
+.card-header { padding: 1.5rem; border-bottom: 1px solid #f1f5f9; display: flex; justify-content: space-between; align-items: center; }
+.pulse-orb { width: 14px; height: 14px; border-radius: 50%; transition: all 1s ease; }
+
+.persona-focus { text-align: center; padding: 2rem 1rem; }
+.emoji-circle {
+    width: 120px; height: 120px; background: #f8fafc; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 4rem; margin: 0 auto 1.5rem; border: 4px solid white; box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.mood-badge { color: white; padding: 6px 16px; border-radius: 50px; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; margin-top: 10px; display: inline-block; }
+
+/* Dashboard Meters */
+.meter-container { padding: 2rem; background: #fcfcfd; border-top: 1px solid #f1f5f9; }
+.meter-row { margin-bottom: 1.2rem; display: flex; align-items: center; }
+.meter-row span { font-size: 0.85rem; font-weight: 600; color: var(--text-muted); min-width: 80px; }
+.progress-bar { height: 10px; background: #e2e8f0; border-radius: 20px; flex: 1; margin: 0 15px; overflow: hidden; }
+.progress { height: 100%; transition: width 1s cubic-bezier(0.4, 0, 0.2, 1); }
+.progress.pos { background: var(--pos-color); }
+.progress.neg { background: var(--neg-color); }
+
+/* Chat Interface */
+.chat-window { flex: 1; padding: 2rem; overflow-y: auto; display: flex; flex-direction: column; gap: 1.5rem; background: #fbfcfe; }
+.ai-bubble, .user-bubble { max-width: 85%; padding: 1rem 1.4rem; border-radius: 18px; line-height: 1.5; font-size: 0.95rem; }
+.ai-bubble { align-self: flex-start; background: white; border: 1px solid #e2e8f0; border-bottom-left-radius: 4px; }
+.user-bubble { align-self: flex-end; background: var(--primary-alt); color: white; border-bottom-right-radius: 4px; }
+
+.input-wrapper { padding: 1.5rem 2rem; background: white; border-top: 1px solid #f1f5f9; display: flex; gap: 1rem; }
+.input-wrapper textarea { flex: 1; border: 1px solid #e2e8f0; border-radius: 12px; padding: 0.8rem; resize: none; font-size: 1rem; outline: none; }
+.send-circle { width: 45px; height: 45px; border-radius: 50%; background: var(--primary-alt); color: white; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+
+/* --- 5. RESPONSIVENESS --- */
+@media (max-width: 1024px) {
+    .main_container, .dashboard-grid { grid-template-columns: 1fr; height: auto; }
+    .visual-side { display: none; }
+}

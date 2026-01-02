@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pulse AI | Login</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">PULSE<span>AI</span></div>
+            <div class="nav-links">
+                <a href="signup.html">Create Account</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main_container">
+        <div class="visual-side">
+            <div class="status-card">
+                <div class="orb-small" id="statusOrb" style="background: #10B981; box-shadow: 0 0 10px #10B981;"></div>
+                <div class="status-text">
+                    <span class="label">Current Pulse</span>
+                    <span class="value">Ready for Login</span>
+                </div>
+            </div>
+            <h1>Your mental health, <br><span class="highlight">translated.</span></h1>
+        </div>
+
+        <div class="form-side">
+            <div class="login-box">
+                <h2>Welcome back</h2>
+                <p class="subtitle">Enter your details to access your dashboard</p>
+
+                <div class="social-grid">
+                    <button class="social-btn"><img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt=""> Google</button>
+                    <button class="social-btn"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt=""> Apple</button>
+                </div>
+
+                <div class="separator"><span>or email</span></div>
+
+                <form id="loginForm">
+                    <div class="input-field">
+                        <label>Email Address</label>
+                        <input type="email" id="loginEmail" placeholder="e.g. alex@example.com" required>
+                    </div>
+                    <div class="input-field">
+                        <label>Password</label>
+                        <input type="password" id="loginPassword" placeholder="••••••••" required>
+                    </div>
+                    <button type="submit" class="btn-primary">Sign In</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- LINKING THE AUTH SCRIPT -->
+    <script src="js/auth.js"></script>
+</body>
+</html>

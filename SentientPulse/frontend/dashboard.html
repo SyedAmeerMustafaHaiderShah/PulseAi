@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pulse AI | Dashboard</title>
+    <!-- Linking our polished CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Premium Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="dashboard-body">
+    <div class="app-container">
+      <!-- 1. NAVIGATION BAR -->
+      <nav class="navbar">
+        <div class="nav-container">
+          <div class="logo">PULSE<span>AI</span></div>
+          <div class="nav-right">
+            <div class="user-pill">
+              <span class="user-icon">👤</span>
+              <span id="userName">User</span>
+            </div>
+            <button id="logoutBtn" class="logout-btn">Logout</button>
+          </div>
+        </div>
+      </nav>
+
+      <!-- 2. MAIN DASHBOARD CONTENT -->
+      <main class="dashboard-grid">
+        <!-- LEFT COLUMN: EMOTIONAL PULSE CARD -->
+        <section class="pulse-card">
+          <div class="card-header">
+            <h3>Emotional Status</h3>
+            <div class="orb-container">
+              <!-- This is the Glowing Orb that changes color -->
+              <div class="pulse-orb" id="moodOrb"></div>
+            </div>
+          </div>
+
+          <div class="persona-focus">
+            <!-- The Emoji Circle that changes based on Persona -->
+            <div class="emoji-circle" id="personaEmoji">✨</div>
+            <h2 id="personaDisplay">Awaiting Pulse</h2>
+            <!-- The Badge showing the Mood Category (Crisis, Positive, etc) -->
+            <p id="moodTag" class="mood-badge" style="background: #94a3b8">
+              Scanning Mood...
+            </p>
+          </div>
+
+          <!-- Animated Progress Bars for Ratios -->
+          <div class="meter-container">
+            <div class="meter-row">
+              <span>Positivity</span>
+              <div class="progress-bar">
+                <div id="posBar" class="progress pos" style="width: 0%"></div>
+              </div>
+              <b id="posValue" class="percent">0%</b>
+            </div>
+
+            <div class="meter-row">
+              <span>Negativity</span>
+              <div class="progress-bar">
+                <div id="negBar" class="progress neg" style="width: 0%"></div>
+              </div>
+              <b id="negValue" class="percent">0%</b>
+            </div>
+          </div>
+        </section>
+
+        <!-- RIGHT COLUMN: CHAT INTERFACE CARD -->
+        <section class="chat-card">
+          <!-- Message Display Area -->
+          <div id="chatWindow" class="chat-window">
+            <div class="ai-bubble">
+              Hello! I'm your Pulse AI. I sense your emotions and adapt my
+              personality to support you. How are you feeling right now?
+            </div>
+          </div>
+
+          <!-- Text Input Area -->
+          <div class="input-wrapper">
+            <textarea
+              id="userInput"
+              placeholder="Type how you feel..."
+              rows="1"
+            ></textarea>
+            <button id="sendBtn" class="send-circle">
+              <svg viewBox="0 0 24 24" width="24" height="24">
+                <path
+                  fill="currentColor"
+                  d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"
+                />
+              </svg>
+            </button>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- 3. JAVASCRIPT LOGIC -->
+    <script src="js/chat.js"></script>
+  </body>
+</html>
