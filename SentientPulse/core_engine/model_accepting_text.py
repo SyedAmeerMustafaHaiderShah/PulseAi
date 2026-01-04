@@ -10,8 +10,8 @@ from nltk.stem import WordNetLemmatizer
 CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # This creates the full path to your models folder
-tfidf_path = os.path.join(CURRENT_DIR, 'models', 'tfidf_bigram_vectorizer.pkl')
-nb_path = os.path.join(CURRENT_DIR, 'models', 'naive_bayes_bigram_model.pkl')
+tfidf_path = os.path.join(CURRENT_DIR, 'models', 'tfidf_vectorizer.pkl')
+nb_path = os.path.join(CURRENT_DIR, 'models', 'linear_svm_model.pkl')
 
 # Load saved artifacts using the full paths
 tfidf_bigram = joblib.load(tfidf_path)
