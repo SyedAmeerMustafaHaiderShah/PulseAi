@@ -232,3 +232,24 @@ SentientPulse/
 ├── testingotherlogic.py # Utility testing scripts
 ├── verify_api.py # API testing script
 └── verify_full_test.py # End-to-end testing script
+
+👤 Author
+
+Syed Ameer Mustafa Haider Shah
+AI Engineering Student | Machine Learning & NLP Enthusiast
+
+📌 Focus Areas:
+
+AI Engineering
+
+Machine Learning
+
+Natural Language Processing
+
+Backend Systems
+
+Intelligent Automation
+
+🔗 GitHub: https://github.com/SyedAmeerMustafaHaiderShah
+
+🔗 LinkedIn: https://www.linkedin.com/in/syedameermustafa/
